@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import "./App.css";
+import { useState, useEffect } from 'react';
+import './App.css';
 
-const apiKey = vite.env.API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 function MainTitle({ title }) {
   return <h1>{title}</h1>;
@@ -11,12 +11,12 @@ function App() {
   useEffect(() => {
     async function loadData() {
       const response = await fetch(
-        "https://usohxzugllyjrrubjzmk.supabase.co/rest/v1/pizzas",
+        'https://eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhqbG5rbHhrdGprZWpnYWNlcnJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDEwOTE2NTUsImV4cCI6MjAxNjY2NzY1NX0.k0ZdR3MpWXLAvwHFCIZi_NXTZBmCURTmAgiKjkFhMQc',
         {
-          method: "GET",
+          method: 'GET',
           headers: {
-            apikey: apiKey
-          }
+            apikey: apiKey,
+          },
         }
       );
 
@@ -32,7 +32,7 @@ function App() {
   //setDynamicTitle = méthode qui permet de mettre à jour la variable d'état
   //useState = hook qui permet de gérer des variables d'état
   //useState("Negosud") = la valeur d'origine de la variable d'état
-  const [dynamicTitle, setDynamicTitle] = useState("Negosud");
+  const [dynamicTitle, setDynamicTitle] = useState('Negosud');
 
   const [pizzas, setPizzas] = useState([]);
 
@@ -40,11 +40,11 @@ function App() {
     //dynamicTitle = "Hello, World!";//ne marche pas
     //car dynamicTitle est une variable d'état immutable
 
-    setDynamicTitle(dynamicTitle === "Negosud" ? "Hello, World!" : "Negosud");
+    setDynamicTitle(dynamicTitle === 'Negosud' ? 'Hello, World!' : 'Negosud');
   }
 
   return (
-    <div className="App">
+    <div className='App'>
       <button onClick={updateTitle}>Click</button>
       <MainTitle title={dynamicTitle} />
 
