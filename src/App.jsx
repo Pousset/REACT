@@ -41,7 +41,7 @@ function App() {
     //car dynamicTitle est une variable d'état immutable
 
     setDynamicTitle(dynamicTitle === 'Negosud' ? 'Hello, World!' : 'Negosud');
-   console.log('hello');  
+    console.log('hello');
   }
 
   return (
@@ -53,11 +53,8 @@ function App() {
           <li key={pizza.id}>{pizza.name}</li>
         ))}
       </ul>
-      
     </div>
   );
-    
-
 }
 
 export default App;
